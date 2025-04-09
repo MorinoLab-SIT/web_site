@@ -1,4 +1,5 @@
 node_modules
 .next
 out
-npm_debug.log
+npm-debug.log
+.DS_Store
