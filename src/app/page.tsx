@@ -1,103 +1,95 @@
+"use client";
+
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+    <div className="min-h-screen bg-gradient-to-br from-blue-400 via-indigo-500 to-blue-600 bg-cover bg-center bg-fixed">
+      {/* メインビジュアル */}
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="bg-white/80 backdrop-blur-lg max-w-3xl mx-auto text-center p-10 mt-20 rounded-2xl shadow-2xl"
+      >
         <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+          src="/morino_lab_logo.png"
+          alt="森野研究室ロゴ"
+          width={160}
+          height={160}
+          className="mx-auto mb-6"
         />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+        <h1 className="text-5xl font-extrabold text-white mb-2 tracking-tight drop-shadow-lg">
+          芝浦工業大学 情報工学科
+        </h1>
+        <h2 className="text-2xl font-medium text-gray-100">
+          森野研究室 Morino Laboratory
+        </h2>
+      </motion.div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
+      {/* おしらせ */}
+      <motion.div
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6 }}
+        className="bg-white/90 max-w-3xl mx-auto p-6 mt-16 rounded-xl shadow-xl"
+      >
+        <h3 className="text-2xl font-bold mb-4 text-blue-700">おしらせ</h3>
+        <ul className="space-y-2 text-gray-700 text-base">
+          <li>2024/12/12 - ○○さんが〇〇学会で発表しました。</li>
+          <li>2024/10/01 - 森野研のゼミ合宿を開催しました。</li>
+          <li>2024/09/15 - ○○君が○○賞を受賞しました。</li>
+        </ul>
+      </motion.div>
+
+      {/* 更新履歴 */}
+      <motion.div
+        initial={{ opacity: 0, x: 50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6 }}
+        className="bg-white/90 max-w-3xl mx-auto p-6 mt-10 rounded-xl shadow-xl"
+      >
+        <h3 className="text-2xl font-bold mb-4 text-green-700">更新履歴</h3>
+        <ul className="space-y-2 text-gray-700 text-base">
+          <li>2025/04/09 - WebサイトをNext.jsでリニューアルしました。</li>
+          <li>2024/11/01 - メンバーページを更新しました。</li>
+          <li>2024/09/10 - 卒業研究テーマを追加しました。</li>
+        </ul>
+      </motion.div>
+
+      {/* 関連リンク */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="bg-white/90 max-w-3xl mx-auto p-6 mt-10 mb-20 rounded-xl shadow-xl"
+      >
+        <h3 className="text-2xl font-bold mb-4 text-purple-700">関連リンク</h3>
+        <div className="flex flex-wrap gap-4 justify-center">
           <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            href="https://www.shibaura-it.ac.jp/"
             target="_blank"
-            rel="noopener noreferrer"
+            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full shadow-lg transition duration-300"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
+            芝浦工業大学
           </a>
           <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            href="https://www.shibaura-it.ac.jp/faculty/engineering/information_science.html"
             target="_blank"
-            rel="noopener noreferrer"
+            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full shadow-lg transition duration-300"
           >
-            Read our docs
+            情報工学科
+          </a>
+          <a
+            href="https://www.shibaura-it.ac.jp/graduate/information/"
+            target="_blank"
+            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full shadow-lg transition duration-300"
+          >
+            大学院 情報工学専攻
           </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </motion.div>
     </div>
   );
 }
