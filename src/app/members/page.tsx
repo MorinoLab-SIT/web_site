@@ -12,7 +12,7 @@ const members = [
 
 export default function Members() {
   return (
-    <div className="min-h-screen bg-gradient-to-r from-yellow-300 via-pink-300 to-purple-300">
+    <div className="min-h-screen pt-[110px] bg-gradient-to-r from-yellow-300 via-pink-300 to-purple-300">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

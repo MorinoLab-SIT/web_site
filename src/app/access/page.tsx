@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 export default function Access() {
   return (
-    <div className="p-6 space-y-6 bg-gradient-to-r from-yellow-400 via-pink-400 to-indigo-500">
+    <div className="p-6 space-y-6 pt-[100px] bg-gradient-to-r from-yellow-400 via-pink-400 to-indigo-500">
       {/* アクセスマップ */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}
