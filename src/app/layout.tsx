@@ -6,11 +6,12 @@ import Header from "../components/Header";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"]
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
-  subsets: ["latin"],
+  subsets: ["latin"]
 });
 
 export const metadata: Metadata = {
@@ -24,12 +25,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ja">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`bg-gradient-to-br from-blue-400 via-indigo-500 to-blue-600 bg-fixed bg-cover text-neutral-100 ${geistSans.variable} ${geistMono.variable} antialiased font-sans`}
       >
         <Header />
-        {children}
+        <main className="min-h-screen max-w-5xl mx-auto px-4 sm:px-8 py-12">
+          {children}
+        </main>
       </body>
     </html>
   );
