@@ -1,6 +1,7 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function Access() {
   return (
@@ -9,58 +10,54 @@ export default function Access() {
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="flex justify-center"
+        transition={{ duration: 0.6 }}
+        className="text-3xl font-bold text-center mb-4"
+      >
+        アクセス
+      </motion.h1>
+
+      {/* Map */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6 }}
+        className="rounded-lg overflow-hidden shadow-lg border border-orange-200"
       >
         <iframe
-          className="w-full max-w-3xl h-96 rounded-lg border-4 border-pink-500 shadow-2xl"
-          src="https://www.google.com/maps/embed/v1/place?q=Shibaura%20Institute%20of%20Technology&key=YOUR_GOOGLE_MAP_API_KEY"
+          className="w-full h-96"
+          src="https://www.google.com/maps/embed/v1/place?q=芝浦工業大学%20豊洲キャンパス&key=YOUR_API_KEY"
           allowFullScreen
-          loading="lazy"
         ></iframe>
       </motion.div>
 
-      {/* アクセス詳細 */}
+      {/* Info */}
       <motion.div
-        initial={{ opacity: 0, x: -50 }}
-        animate={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="bg-white max-w-3xl mx-auto p-6 rounded-xl shadow-lg border-4 border-yellow-500"
+        className="bg-white p-6 rounded-lg shadow-md border border-orange-200"
       >
-        <h2 className="text-3xl font-bold text-center text-black mb-4">
-          アクセス方法
-        </h2>
-        <ul className="space-y-4 text-gray-800 text-lg">
-          <li>
-            <h3 className="font-semibold text-black">電車でのアクセス</h3>
-            <p className="text-black">
-              最寄り駅は「芝浦工業大学前駅」で、徒歩5分です。大崎駅からはJR線で10分程度です。
-            </p>
-          </li>
-          <li>
-            <h3 className="font-semibold text-black">バスでのアクセス</h3>
-            <p className="text-black">
-              大崎駅西口から、芝浦工業大学行きのバスが毎日運行しています。
-            </p>
-          </li>
-        </ul>
+        <h2 className="text-xl font-semibold mb-2">電車でのアクセス</h2>
+        <p className="text-gray-700">
+          有楽町線「豊洲駅」1aまたは3番出口から徒歩7分。JR京葉線「越中島駅」2番出口から徒歩15分。
+        </p>
       </motion.div>
 
-      {/* お問い合わせ情報 */}
+      {/* Map Image */}
       <motion.div
-        initial={{ opacity: 0, x: 50 }}
-        animate={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6 }}
-        className="bg-white max-w-3xl mx-auto p-6 mt-10 rounded-xl shadow-lg border-4 border-indigo-500"
+        className="text-center"
       >
-        <h3 className="text-2xl font-bold text-center text-black mb-4">
-          お問い合わせ
-        </h3>
-        <p className="text-black text-lg">
-          住所：東京都港区芝浦3-7-5<br />
-          電話番号：03-1234-5678<br />
-          メールアドレス：info@shibaura-it.ac.jp
-        </p>
+        <Image
+          src="/campus_map.png"
+          alt="校内マップ"
+          width={600}
+          height={400}
+          className="mx-auto rounded-md border border-orange-200"
+        />
+        <p className="mt-4 text-gray-600">研究棟12階の12I32が森野研究室です。</p>
       </motion.div>
     </div>
   );

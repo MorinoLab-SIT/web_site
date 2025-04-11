@@ -1,6 +1,7 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
+import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function Research() {
   return (
@@ -10,42 +11,34 @@ export default function Research() {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="text-center mb-16"
+        className="text-center"
       >
-        <h1 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-pink-500">
-          研究内容
-        </h1>
-        <p className="text-lg mt-4 text-gray-100">最先端の通信技術とネットワーク研究をご紹介します。</p>
+        <h1 className="text-4xl font-bold text-gray-900 mb-4">研究内容</h1>
+        <p className="text-lg text-gray-600">
+          ユーザ参加型自律分散ネットワークを中心に、無線メッシュやP2P通信などの分野で先進的な研究を行っています。
+        </p>
       </motion.div>
 
-      {/* 研究項目 */}
+      {/* 研究テーマ */}
       <motion.div
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6 }}
-        className="max-w-4xl mx-auto bg-gray-900 p-8 rounded-lg shadow-lg"
+        className="bg-white max-w-3xl mx-auto p-6 rounded-xl shadow-xl"
       >
-        <h2 className="text-3xl font-semibold text-center text-gray-200 mb-6">
-          研究テーマ
-        </h2>
-        <ul className="space-y-4 text-gray-300 text-lg">
+        <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">研究テーマ</h2>
+        <ul className="space-y-6 text-gray-700 text-base">
           <li>
-            <h3 className="font-semibold text-yellow-400">無線メッシュネットワーク</h3>
-            <p>
-              複数のノードが相互に通信し、効率的なデータ伝送を実現するための技術。
-            </p>
+            <h3 className="font-semibold text-gray-900">ユーザ参加型自律分散ネットワーク</h3>
+            <p>ユーザの通信機器が中継ノードとなり、自律分散的な高速ネットワークを構築する手法を研究。</p>
           </li>
           <li>
-            <h3 className="font-semibold text-blue-400">P2P通信技術</h3>
-            <p>
-              ピアツーピアネットワークでのデータ共有とセキュリティ向上のためのアルゴリズム研究。
-            </p>
+            <h3 className="font-semibold text-gray-900">無線メッシュネットワークにおけるコンテンツキャッシュ</h3>
+            <p>イベント会場などにおけるキャッシュ配信の最適化と混雑緩和のための手法を提案。</p>
           </li>
           <li>
-            <h3 className="font-semibold text-green-400">分散ネットワークシステム</h3>
-            <p>
-              中央集権型の管理を排除し、柔軟で拡張性のあるネットワークを実現するための技術。
-            </p>
+            <h3 className="font-semibold text-gray-900">P2Pマルチキャストによるライブ配信</h3>
+            <p>サーバ負荷を軽減しつつ、ユーザ間で効率よく映像を共有できるネットワーク技術の開発。</p>
           </li>
         </ul>
       </motion.div>
@@ -55,41 +48,41 @@ export default function Research() {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="max-w-4xl mx-auto bg-gray-900 p-8 mt-10 rounded-lg shadow-lg"
+        className="bg-white max-w-3xl mx-auto p-6 rounded-xl shadow-xl"
       >
-        <h3 className="text-2xl font-semibold text-center text-gray-200 mb-4">
-          研究のアプローチ
-        </h3>
-        <p className="text-gray-300 text-lg">
-          私たちの研究室では、無線メッシュネットワークやP2P通信を利用した、データの高速伝送とセキュアな通信環境を実現するためのアルゴリズムを研究しています。
+        <h3 className="text-2xl font-bold text-gray-800 mb-4 text-center">研究のアプローチ</h3>
+        <p className="text-gray-700 text-base">
+          森野研究室では、実験・シミュレーション・理論分析を組み合わせ、実現性の高いネットワークシステムを提案しています。
         </p>
-        <ul className="space-y-4 text-gray-300 text-lg mt-6">
+        <ul className="space-y-4 text-gray-700 text-base mt-6">
           <li>
-            <h4 className="font-semibold text-yellow-400">効率的なルーティング技術</h4>
-            <p>無線メッシュネットワーク内での最適なルーティングアルゴリズムの開発。</p>
+            <h4 className="font-semibold text-gray-900">ルーティング手法の最適化</h4>
+            <p>通信経路を効率化するためのルーティングアルゴリズムの構築。</p>
           </li>
           <li>
-            <h4 className="font-semibold text-blue-400">セキュリティ強化</h4>
-            <p>P2P通信におけるデータの暗号化とセキュリティプロトコルの研究。</p>
+            <h4 className="font-semibold text-gray-900">セキュリティと秘匿性の確保</h4>
+            <p>ネットワーク上での匿名性と情報保護を両立するプロトコルの開発。</p>
           </li>
           <li>
-            <h4 className="font-semibold text-green-400">スケーラビリティの向上</h4>
-            <p>大規模なネットワークにおける性能とスケーラビリティの向上を目指しています。</p>
+            <h4 className="font-semibold text-gray-900">スケーラビリティの拡張</h4>
+            <p>参加者が増加しても性能が維持できるネットワーク設計。</p>
           </li>
         </ul>
       </motion.div>
 
-      {/* イメージ */}
+      {/* イメージ画像 */}
       <motion.div
-        initial={{ opacity: 0, scale: 0.5 }}
+        initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8 }}
-        className="flex justify-center mt-16"
+        className="flex justify-center"
       >
-        <img
-          src="/research_image.png"  // ここに関連画像を指定
-          alt="研究のイメージ"
-          className="w-full max-w-2xl rounded-lg shadow-xl"
+        <Image
+          src="/research/network_diagram.png"
+          alt="研究イメージ図"
+          width={800}
+          height={500}
+          className="rounded-lg shadow-2xl"
         />
       </motion.div>
     </div>
