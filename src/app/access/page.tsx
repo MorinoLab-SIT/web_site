@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export default function Access() {
   return (
@@ -14,7 +15,7 @@ export default function Access() {
       >
         <iframe
           className="w-full max-w-3xl h-96 rounded-lg border-4 border-pink-500 shadow-2xl"
-          src="https://www.google.com/maps/embed/v1/place?q=Shibaura%20Institute%20of%20Technology&key=YOUR_GOOGLE_MAP_API_KEY"
+          src="https://www.google.com/maps/embed/v1/place?q=芝浦工業大学%20豊洲キャンパス&key=YOUR_GOOGLE_MAP_API_KEY"
           allowFullScreen
           loading="lazy"
         ></iframe>
@@ -34,19 +35,14 @@ export default function Access() {
           <li>
             <h3 className="font-semibold text-black">電車でのアクセス</h3>
             <p className="text-black">
-              最寄り駅は「芝浦工業大学前駅」で、徒歩5分です。大崎駅からはJR線で10分程度です。
-            </p>
-          </li>
-          <li>
-            <h3 className="font-semibold text-black">バスでのアクセス</h3>
-            <p className="text-black">
-              大崎駅西口から、芝浦工業大学行きのバスが毎日運行しています。
+              有楽町線「豊洲駅」1aまたは3番出口から徒歩7分。
+              JR京葉線「越中島駅」2番出口から徒歩15分。
             </p>
           </li>
         </ul>
       </motion.div>
 
-      {/* お問い合わせ情報 */}
+      {/* 校内マップ */}
       <motion.div
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
@@ -54,12 +50,37 @@ export default function Access() {
         className="bg-white max-w-3xl mx-auto p-6 mt-10 rounded-xl shadow-lg border-4 border-indigo-500"
       >
         <h3 className="text-2xl font-bold text-center text-black mb-4">
+          校内マップ
+        </h3>
+        <div className="flex justify-center">
+          <Image
+            src="/campus_map.png"
+            alt="校内マップ"
+            width={600}
+            height={400}
+            className="rounded-lg"
+          />
+        </div>
+        <p className="text-black text-lg mt-4 text-center">
+          森野研究室は研究棟12階の「12I32」です。
+        </p>
+      </motion.div>
+
+      {/* お問い合わせ情報 */}
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="bg-white max-w-3xl mx-auto p-6 mt-10 rounded-xl shadow-lg border-4 border-green-500"
+      >
+        <h3 className="text-2xl font-bold text-center text-black mb-4">
           お問い合わせ
         </h3>
-        <p className="text-black text-lg">
-          住所：東京都港区芝浦3-7-5<br />
-          電話番号：03-1234-5678<br />
-          メールアドレス：info@shibaura-it.ac.jp
+        <p className="text-black text-lg text-center">
+          名称：芝浦工業大学工学部情報・通信工学課程 森野博章研究室<br />
+          住所：東京都江東区豊洲3-7-5 研究棟12階 12-I-32号室<br />
+          電話番号：03-5859-8254<br />
+          FAX：03-5859-8254
         </p>
       </motion.div>
     </div>

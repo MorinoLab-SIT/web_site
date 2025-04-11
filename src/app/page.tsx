@@ -14,7 +14,7 @@ export default function Home() {
         className="bg-white/80 backdrop-blur-lg max-w-3xl mx-auto text-center p-10 mt-20 rounded-2xl shadow-2xl"
       >
         <Image
-          src="/morino_lab_logo.png"
+          src="/lab-group2023.png"
           alt="森野研究室ロゴ"
           width={160}
           height={160}
