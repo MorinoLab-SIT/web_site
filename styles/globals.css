@@ -25,5 +25,5 @@ h1, h2, h3 {
 
 /* ページ背景（グラデーション） */
 .page-bg {
-  @apply min-h-screen bg-gradient-to-r from-teal-400 via-blue-500 to-indigo-600 text-white p-8;
+  @apply min-h-screen bg-white text-white p-8;
 }

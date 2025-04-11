@@ -21,7 +21,7 @@ export default function Home() {
           className="mx-auto mb-6 rounded-md"
         />
         <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-2 tracking-tight">
-          芝浦工業大学 情報工学科
+          移動通信ネットワーク研究室
         </h1>
         <h2 className="text-xl sm:text-2xl font-medium text-gray-700">
           森野研究室 Morino Laboratory

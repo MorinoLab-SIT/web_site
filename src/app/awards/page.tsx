@@ -146,7 +146,7 @@ const awards = [
 
 export default function Awards() {
   return (
-    <div className="min-h-screen pt-[110px] bg-gradient-to-r from-teal-500 via-indigo-500 to-purple-600 text-white p-8">
+    <div className="min-h-screen pt-[110px] white text-white p-8">
       {/* タイトル */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}

@@ -7,7 +7,7 @@ const faculty = [
   {
     name: "森野 博章",
     role: "教授",
-    img: "/members/morino.jpg",
+    img: "/morino.jpg",
   },
 ];
 
@@ -155,8 +155,8 @@ export default function Members() {
               />
             )}
             <div>
-              <h3 className="text-lg font-semibold text-gray-900 underline decoration-lime-400 decoration-2 underline-offset-4">
-                {member.name} <span className="text-sm text-gray-500">({member.role})</span>
+              <h3 className="text-lg font-semibold text-black underline decoration-lime-400 decoration-2 underline-offset-4">
+                {member.name} <span className="text-sm text-gray-600">({member.role})</span>
               </h3>
               {"research" in member && (
                 <p className="text-sm text-gray-800 mt-1">{member.research}</p>
@@ -169,15 +169,15 @@ export default function Members() {
   );
 
   return (
-    <div className="min-h-screen pt-[110px] bg-gradient-to-r from-yellow-300 via-pink-300 to-purple-300">
+    <div className="min-h-screen pt-[110px] bg-white text-black">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
         className="text-center"
       >
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">メンバー紹介</h1>
-        <p className="text-lg text-gray-600">私たちのチームをご紹介します！</p>
+        <h1 className="text-4xl font-bold text-black mb-4">メンバー紹介</h1>
+        <p className="text-lg text-gray-800">私たちのチームをご紹介します！</p>
       </motion.div>
 
       {renderMembers("教員", faculty, true)}

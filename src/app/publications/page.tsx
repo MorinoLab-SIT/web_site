@@ -47,7 +47,7 @@ export default function Publications() {
   ];
 
   return (
-    <div className="min-h-screen pt-[110px] bg-gradient-to-r from-indigo-500 via-purple-600 to-pink-600 text-white p-8">
+    <div className="min-h-screen pt-[110px] bg-white text-white p-8">
       {/* タイトル */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}
