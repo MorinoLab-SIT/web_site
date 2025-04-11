@@ -5,9 +5,10 @@ import Image from "next/image";
 
 export default function Access() {
   return (
-    <div className="max-w-5xl mx-auto space-y-12 py-12 bg-white text-gray-900">
-      <motion.h1
-        initial={{ opacity: 0, y: 10 }}
+    <div className="p-6 space-y-6 pt-[100px] bg-gradient-to-r from-yellow-400 via-pink-400 to-indigo-500">
+      {/* アクセスマップ */}
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         className="text-3xl font-bold text-center mb-4"

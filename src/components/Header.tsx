@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const links = [
   { name: 'トップ', href: '/', color: 'bg-gradient-to-r from-blue-500 to-teal-400' },
@@ -18,29 +18,43 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="bg-white shadow-md">
+    <header className="fixed top-0 w-full z-50 bg-white shadow-lg">
       <motion.nav
-        className="flex justify-center space-x-6 text-sm font-medium py-3"
+        className="flex flex-wrap justify-center space-x-3 sm:space-x-6 text-sm sm:text-base font-semibold py-3 sm:py-5 px-2"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
         {links.map((link) => (
-          <div key={link.href} className="flex flex-col items-center relative">
+          <div
+            key={link.href}
+            className="flex flex-col items-center relative group"
+          >
             <Link
               href={link.href}
               className={`transition-all duration-300 text-gray-700 ${
                 pathname === link.href ? 'font-bold text-blue-800' : ''
-              } hover:scale-110 hover:text-gray-700 hover:shadow-lg p-1 rounded-md`}
+              } hover:scale-105 hover:text-gray-700 px-2 py-1 rounded-md`}
             >
               {link.name}
             </Link>
-            <motion.div
-              className={`w-full h-1 mt-1 rounded-full transition-all duration-500 ${
-                pathname === link.href ? link.color : 'bg-transparent'
-              }`}
-              layoutId="underline"
-            />
+
+            {/* 下線 */}
+            <div className="relative w-full h-1 mt-1">
+              <motion.div
+                layoutId="underline"
+                className={`absolute inset-0 rounded-full ${
+                  pathname === link.href ? link.color : 'opacity-0'
+                }`}
+                transition={{ duration: 0.4 }}
+              />
+              {/* ホバー下線 */}
+              {pathname !== link.href && (
+                <div
+                  className={`absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${link.color}`}
+                />
+              )}
+            </div>
           </div>
         ))}
       </motion.nav>

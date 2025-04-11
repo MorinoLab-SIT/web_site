@@ -169,7 +169,7 @@ export default function Members() {
   );
 
   return (
-    <div className="space-y-16 py-12">
+    <div className="min-h-screen pt-[110px] bg-gradient-to-r from-yellow-300 via-pink-300 to-purple-300">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

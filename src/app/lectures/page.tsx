@@ -27,7 +27,7 @@ export default function ClassPage() {
   ];
 
   return (
-    <div className="space-y-16 py-12 bg-white text-gray-900">
+    <div className="min-h-screen pt-[110px] bg-gradient-to-r from-teal-400 via-blue-500 to-indigo-600 text-white p-8">
       {/* タイトル */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}

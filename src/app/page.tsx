@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="space-y-16">
+    <div className="space-y-16 pt-[80px]" >
       {/* メインビジュアル */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}
